@@ -22,7 +22,7 @@
 
 import Foundation
 
-enum UnrecoverableError: Equatable, Error {
+public enum UnrecoverableError: Equatable, Error {
     case connectionTimeout
     case invalidClientOrDomain
     case clientWithNoConnections
@@ -43,7 +43,7 @@ enum UnrecoverableError: Equatable, Error {
         }
     }
 
-    var canRetry: Bool {
+    public var canRetry: Bool {
         switch self {
         case .connectionTimeout, .requestIssue:
             return true
@@ -53,7 +53,7 @@ enum UnrecoverableError: Equatable, Error {
     }
 }
 
-func == (lhs: UnrecoverableError, rhs: UnrecoverableError) -> Bool {
+public func == (lhs: UnrecoverableError, rhs: UnrecoverableError) -> Bool {
     switch((lhs, rhs)) {
     case (.connectionTimeout, .connectionTimeout), (.invalidClientOrDomain, .invalidClientOrDomain), (.clientWithNoConnections, .clientWithNoConnections),
          (.requestIssue, .requestIssue), (.missingDatabaseConnection, .missingDatabaseConnection):

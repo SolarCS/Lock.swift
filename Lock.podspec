@@ -1,7 +1,7 @@
 version = `agvtool mvers -terse1`.strip
 Pod::Spec.new do |s|
   s.name             = "Lock"
-  s.version          = version
+  s.version          = "2.18.0"
   s.summary          = "A library that uses Auth0 for Authentication with Native Look & Feel"
   s.description      = <<-DESC
 [![Auth0](https://i.cloudup.com/1vaSVATKTL.png)](http://auth0.com)
